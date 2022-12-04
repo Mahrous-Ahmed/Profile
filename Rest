@@ -1,0 +1,10 @@
+  RestAssured.baseURI = "https://jsonplaceholder.typicode.com/";
+        RequestSpecification httpRequest = RestAssured.given();
+
+        Response response = httpRequest.get("posts");
+        response.prettyPrint();
+
+        List<Integer> Ids =  response.body().path("userId");
+
+
+        System.out.println(Ids.get(0));
